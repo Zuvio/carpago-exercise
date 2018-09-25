@@ -30,8 +30,21 @@ public class Car {
     public void fill() {
         if(tanky.getCurrentLevel() < tanky.getMaxLevel()) {
             tanky.setCurrentLevel(tanky.getCurrentLevel() + 1);
+            System.out.println("Fuel @ "+tanky.getCurrentLevel()+"\\"+tanky.getMaxLevel());
         } else {
-            System.out.println("Tank is vol!");
+            System.out.println("Tank is al vol!");
+        }
+    }
+    public void fill(int liters) {
+        if(tanky.getCurrentLevel() < tanky.getMaxLevel()) {
+            tanky.setCurrentLevel(tanky.getCurrentLevel()+liters);
+            if(tanky.getCurrentLevel() > tanky.getMaxLevel()) {
+                System.out.println("You just wasted "+String.valueOf(tanky.getCurrentLevel()-tanky.getMaxLevel())+" liters!");
+                tanky.setCurrentLevel(tanky.getMaxLevel());
+                System.out.println("Tank is at maximum level :"+ tanky.getCurrentLevel());
+            }
+        } else {
+            System.out.println("Tank is al vol!");
         }
     }
 

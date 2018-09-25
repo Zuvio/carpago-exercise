@@ -18,6 +18,9 @@ public class CarApp {
         System.out.println("Car 1 Price = 25000.00? -> "+(25000.00 == car1.getPrice()));
 
         car1.fill();
+        car1.fill();
+        car1.fill();
+        car1.fill(5);
 
 
 

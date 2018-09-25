@@ -1,7 +1,7 @@
 package nl.acme.carcase.domain;
 
 public class PetrolTank {
-    private double maxLevel, minLevel, currentLevel;
+    private double maxLevel=10, minLevel=0, currentLevel=6;
 
     public void dec() {
         this.currentLevel--;
