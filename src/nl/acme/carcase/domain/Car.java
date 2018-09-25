@@ -38,6 +38,7 @@ public class Car {
     public void fill(int liters) {
         if(tanky.getCurrentLevel() < tanky.getMaxLevel()) {
             tanky.setCurrentLevel(tanky.getCurrentLevel()+liters);
+            System.out.println("Fuel @ "+tanky.getCurrentLevel()+"\\"+tanky.getMaxLevel());
             if(tanky.getCurrentLevel() > tanky.getMaxLevel()) {
                 System.out.println("You just wasted "+String.valueOf(tanky.getCurrentLevel()-tanky.getMaxLevel())+" liters!");
                 tanky.setCurrentLevel(tanky.getMaxLevel());
@@ -45,6 +46,29 @@ public class Car {
             }
         } else {
             System.out.println("Tank is al vol!");
+        }
+    }
+
+    public void drive() {
+        if(tanky.getCurrentLevel()>0) {
+            tanky.setCurrentLevel(tanky.getCurrentLevel()-1);
+            System.out.println("1km gereden -> fuel @ "+tanky.getCurrentLevel()+"\\"+tanky.getMaxLevel());
+        } else {
+            System.out.println("ERROR: Je kunt niet rijden, want je tank is leeg, succes lol...  (Tip: roep fill() aan....)");
+        }
+    }
+    public void drive(int kms) {
+        if(tanky.getCurrentLevel()>0) {
+            tanky.setCurrentLevel(tanky.getCurrentLevel()-kms);
+            if(tanky.getCurrentLevel()<tanky.getMinLevel()) {
+                System.out.println("Je hebt je tank leeg gereden, eerst weervullen aub.");
+                tanky.setCurrentLevel(tanky.getMinLevel());
+            } else {
+                System.out.println(kms+"km gereden -> fuel @ "+tanky.getCurrentLevel()+"\\"+tanky.getMaxLevel());
+            }
+
+        } else {
+            System.out.println("ERROR: Je kunt niet rijden, want je tank is leeg, succes lol...  (Tip: roep fill() aan....)");
         }
     }
 

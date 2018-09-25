@@ -21,6 +21,13 @@ public class CarApp {
         car1.fill();
         car1.fill();
         car1.fill(5);
+        car1.drive();
+        car1.drive();
+        car1.drive(4);
+        car1.drive(7);
+        car1.drive();
+        car1.fill(5);
+        car1.drive();
 
 
 
